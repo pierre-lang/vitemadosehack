@@ -15,7 +15,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-	background-color: white;
+    
 }
 .vaccintype {
 	display: inline-flex;
@@ -40,6 +40,12 @@ body {
     border-radius: 10px;
     font-size: 18pt;
     background-color: white;
+}
+.contact .phone {
+	display: block;
+}
+.contact .url {
+	display: block;
 }
 
 .centre {
@@ -82,11 +88,8 @@ body {
     top: 10px;
     right: 10px;
 }
-.contact .phone {
-	display: block;
-}
-.contact .url {
-	display: block;
+#vtypes label {
+	break-inside: avoid;
 }
 
 </style>
@@ -95,9 +98,9 @@ body {
 <body>
 Localisation : <div id="localisation"><input type=text ></div><br>
 Filtrer selon: <div id="filters">
-					<div class="dispo"><label>La disponibilité</label><input type="checkbox" checked id="dispo"></div>
-					<div class="distance"><label>La distance</label><input type="number" min=1 max=100 id="rayon" value="10"></div>
-					<div class="daterdv"><label>La date de rendez vous</label><select id="delay">
+					<div class="dispo"><label>La disponibilité </label><input type="checkbox" checked id="dispo"></div>
+					<div class="distance"><label>La distance </label><input type="number" min=1 max=100 id="rayon" value="10">km</div>
+					<div class="daterdv"><label>La date de rendez vous </label><select id="delay">
 						<option value="0">n'importe quand</option>
 						<option value="3">dans les 3 prochaines heures</option>
 						<option value="6">dans les 6 prochaines heures</option>
@@ -105,7 +108,7 @@ Filtrer selon: <div id="filters">
 						<option value="24">dans les 24 prochaines heures</option>
 						<option value="72">dans les 3 prochains jours</option>
 					</select></div>
-					<div class="vaccintype"><label>Le type de vaccin</label><div id="vtypes"></div></div>
+					<div class="vaccintype"><label>Le type de vaccin </label><div id="vtypes"></div></div>
 				</div>
 Trier selon: <div id="sort">
 	<select id="selsort">
