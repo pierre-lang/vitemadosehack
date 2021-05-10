@@ -274,8 +274,9 @@ Trier selon: <div id="sort">
 	function formatPhone(num) {
 		str = ""
 		if (num.charAt(0)=="+") {
-			str = "+"
-			num = num.substring(1,num.length);
+			str = num.substring(0,3);
+			str += " " + num.substring(3,4);
+			num = num.substring(4,num.length);
 		} 
 		while (num.length>0) {
 			if (num.length>1) {
