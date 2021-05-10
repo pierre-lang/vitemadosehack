@@ -115,7 +115,7 @@ body {
 <div id="hackwrapper">
 Localisation : <div id="localisation"><input type=text ></div><br>
 Filtrer selon: <div id="filters">
-					<div class="dispo"><label>La disponibilit頼/label><input type="checkbox" checked id="dispo"></div>
+					<div class="dispo"><label>La disponibilité </label><input type="checkbox" checked id="dispo"></div>
 					<div class="distance"><label>La distance </label><input type="number" min=1 max=100 id="rayon" value="10">km</div>
 					<div class="daterdv"><label>La date de rendez vous </label><select id="delay">
 						<option value="0">n'importe quand</option>
@@ -170,7 +170,7 @@ Trier selon: <div id="sort">
 	var nearestDepartmentsCodes = {};
 	var lastDataUpdate = null;
 	
-	var placeTypes = {"vaccination-center":"Centre de vaccination",drugstore:"Pharmacie","general-practitioner":"M餥cin g鮩raliste"};
+	var placeTypes = {"vaccination-center":"Centre de vaccination",drugstore:"Pharmacie","general-practitioner":"Médecin généraliste"};
 	
 
 	
@@ -270,7 +270,7 @@ Trier selon: <div id="sort">
 		}
 		nbresultsDiv.innerHTML = count + " lieux";
 		if (lastDataUpdate) {
-			nbresultsDiv.innerHTML += " (Donn饳 du " + lastDataUpdate.toLocaleString() + ")" 
+			nbresultsDiv.innerHTML += " (Données du " + lastDataUpdate.toLocaleString() + ")" 
 		}
 	}
 	
@@ -555,7 +555,7 @@ Trier selon: <div id="sort">
 				let aphone = doc.createElement("a");
 				aphone.classList.add("phone");
 				aphone.setAttribute("href","tel:" + md.phone_number);
-				aphone.innerHTML = "Appeler par t鬩phone"
+				aphone.innerHTML = "Appeler par téléphone"
 				divcontact.appendChild(aphone);
 			}
 			if (centre.url) {
@@ -569,7 +569,7 @@ Trier selon: <div id="sort">
 			if (centre.appointment_count) {
 				let divcreneaux = doc.createElement("div");
 				divcreneaux.classList.add("creneaux");
-				divcreneaux.innerHTML = centre.appointment_count + " cr鮥aux"
+				divcreneaux.innerHTML = centre.appointment_count + " créneaux"
 				divcontactandcreneaux.appendChild(divcreneaux);
 			}
 		}		
