@@ -101,10 +101,15 @@ body {
 	white-space: nowrap;
 }
 
+#hackwrapper {
+	padding-left: 5px;
+}
+
 </style>
 
 </head>
 <body>
+<div id="hackwrapper">
 Localisation : <div id="localisation"><input type=text ></div><br>
 Filtrer selon: <div id="filters">
 					<div class="dispo"><label>La disponibilité </label><input type="checkbox" checked id="dispo"></div>
@@ -682,5 +687,5 @@ Trier selon: <div id="sort">
 		
 })(window,document,geoJSONDepartements,"#localisation","#filters","#sort","#results","#nbresults","#map");
 </script>
-
+</div>
 </body>
