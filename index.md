@@ -28,6 +28,11 @@ body {
     border-radius: 10px;
     font-size: 18pt;
 }
+
+#vtypes label {
+	white-space: nowrap;
+}
+
 @media screen and (max-device-width: 800px) {
   #localisation input  {
     width: 90vw;
@@ -36,6 +41,12 @@ body {
   }
   #hackwrapper {
 	width: 95vw;
+  }
+  
+  #vtypes label {
+	white-space: nowrap;
+	font-size: 12px;
+	display:block;
   }
 }
 
@@ -98,10 +109,6 @@ body {
     position: absolute;
     top: 10px;
     right: 10px;
-}
-#vtypes label {
-	break-inside: avoid;
-	white-space: nowrap;
 }
 
 #hackwrapper {
