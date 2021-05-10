@@ -34,6 +34,9 @@ body {
 	height: auto;
 	font-size: inherit;
   }
+  #hackwrapper {
+	width: 95vw;
+  }
 }
 
 
