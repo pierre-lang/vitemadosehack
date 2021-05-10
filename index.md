@@ -168,6 +168,7 @@ Trier selon: <div id="sort">
 	var currentAddress = null;
 	var currentCoordinates = null;
 	var nearestDepartmentsCodes = {};
+	var lastDataUpdate = null;
 	
 	var placeTypes = {"vaccination-center":"Centre de vaccination",drugstore:"Pharmacie","general-practitioner":"Médecin généraliste"};
 	
@@ -268,6 +269,9 @@ Trier selon: <div id="sort">
 			
 		}
 		nbresultsDiv.innerHTML = count + " lieux";
+		if (lastDataUpdate) {
+			nbresultsDiv.innerHTML += " (Données du " + lastDataUpdate.toLocaleString() + ")" 
+		}
 	}
 	
 	divVT.addEventListener("change",inPlaceFilter)
@@ -413,6 +417,16 @@ Trier selon: <div id="sort">
 		var rayon = parseInt(rayonInput.value);
 		for (var dep in vdmAppointmentsByDepartment) {
 			var apps = vdmAppointmentsByDepartment[dep];
+			if (apps.last_updated) {
+				var ld = new Date(apps.last_updated);
+				if (lastDataUpdate==null) {
+					lastDataUpdate = ld;
+				} else {
+					if (ld<lastDataUpdate) {
+						lastDataUpdate = ld;
+					}
+				}
+			}
 			for (let i=0;i<apps.centres_disponibles.length;i++) {
 				let centre = apps.centres_disponibles[i];
 				if (filter(centre,pt,rayon)) {
