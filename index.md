@@ -18,7 +18,7 @@ body {
     
 }
 .vaccintype {
-	display: inline-flex;
+	display: flex;
 }
 
 #localisation input {
