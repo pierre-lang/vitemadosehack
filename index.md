@@ -91,7 +91,7 @@ body {
 <body>
 Localisation : <div id="localisation"><input type=text ></div><br>
 Filtrer selon: <div id="filters">
-					<div class="dispo"><label>La disponibilité</label><input type="checkbox" id="dispo"></div>
+					<div class="dispo"><label>La disponibilité</label><input type="checkbox" checked id="dispo"></div>
 					<div class="distance"><label>La distance</label><input type="number" min=1 max=100 id="rayon" value="10"></div>
 					<div class="daterdv"><label>La date de rendez vous</label><select id="delay">
 						<option value="0">n'importe quand</option>
