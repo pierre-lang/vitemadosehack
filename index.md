@@ -644,9 +644,11 @@ Trier selon: <div id="sort">
 				var a = data.features[i];
 				var div = doc.createElement("div");
 				div.innerHTML = a.properties.label;
-				if (localisationInput.value==a.properties.label) {
-					divlaunch = div;
-				}
+				try {
+					if (localisationInput.value.toLowerCase()==a.properties.label.toLowerCase()) {
+						divlaunch = div;
+					}
+				} catch(e) {}
 				div._coordinates = a.geometry.coordinates;
 				div._geometry = a.geometry;
 				addrresult.appendChild(div);
