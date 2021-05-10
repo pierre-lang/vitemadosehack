@@ -82,9 +82,13 @@ body {
     top: 10px;
     right: 10px;
 }
-#map {
-
+.contact .phone {
+	display: block;
 }
+.contact .url {
+	display: block;
+}
+
 </style>
 
 </head>
