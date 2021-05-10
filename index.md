@@ -611,6 +611,7 @@ Trier selon: <div id="sort">
 	function addressclick() {
 		localisationInput.value = this.innerHTML;
 		currentAddress = this.innerHTML;
+		localStorage.setItem("currentAddress",currentAddress);
 		currentCoordinates = this._coordinates;
 		this.parentElement.remove();
 		getResults();
@@ -638,18 +639,36 @@ Trier selon: <div id="sort">
 		.then(response => response.json())
 		.then(data => {
 			addrresult.innerHTML = "";
+			var divlaunch = null;
 			for (var i=0;i<data.features.length;i++) {
 				var a = data.features[i];
 				var div = doc.createElement("div");
 				div.innerHTML = a.properties.label;
+				if (localisationInput.value==a.properties.label) {
+					divlaunch = div;
+				}
 				div._coordinates = a.geometry.coordinates;
 				div._geometry = a.geometry;
 				addrresult.appendChild(div);
 				div.addEventListener("click",addressclick);
 			}
+			if (data.features.length==1) {
+				addressclick.apply(addrresult.querySelector("div"));
+			} else {
+				if (divlaunch!=null) {
+					addressclick.apply(divlaunch);
+				}	
+			}
 		})
 	}
 	localisationInput.addEventListener("input",resolveaddress);
+	localisationInput.addEventListener("focusin",resolveaddress);
+	
+	let cura = localStorage.getItem("currentAddress");
+	if (cura!=null) {
+		localisationInput.value = cura;
+		resolveaddress.apply(localisationInput);
+	}
 		
 })(window,document,geoJSONDepartements,"#localisation","#filters","#sort","#results","#nbresults","#map");
 </script>
