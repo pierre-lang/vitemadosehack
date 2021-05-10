@@ -23,7 +23,7 @@ body {
 
 #localisation input {
 	width: 500px;
-	max-width: 90%;
+	max-width: 90vw;
     height: 30px;
     border-radius: 10px;
     font-size: 18pt;
@@ -31,7 +31,7 @@ body {
 
 #map {
 	width: 500px;
-	max-width: 90%;
+	max-width: 95vw;
 	height: 500px;
 	max-height: 50vh;
 }
@@ -99,7 +99,7 @@ body {
 <body>
 Localisation : <div id="localisation"><input type=text ></div><br>
 Filtrer selon: <div id="filters">
-					<div class="dispo"><label>La disponibilité </label><input type="checkbox" checked id="dispo"></div>
+					<div class="dispo"><label>La disponibilit頼/label><input type="checkbox" checked id="dispo"></div>
 					<div class="distance"><label>La distance </label><input type="number" min=1 max=100 id="rayon" value="10">km</div>
 					<div class="daterdv"><label>La date de rendez vous </label><select id="delay">
 						<option value="0">n'importe quand</option>
@@ -153,7 +153,7 @@ Trier selon: <div id="sort">
 	var currentCoordinates = null;
 	var nearestDepartmentsCodes = {};
 	
-	var placeTypes = {"vaccination-center":"Centre de vaccination",drugstore:"Pharmacie","general-practitioner":"Médecin généraliste"};
+	var placeTypes = {"vaccination-center":"Centre de vaccination",drugstore:"Pharmacie","general-practitioner":"M餥cin g鮩raliste"};
 	
 
 	
@@ -525,7 +525,7 @@ Trier selon: <div id="sort">
 				let aphone = doc.createElement("a");
 				aphone.classList.add("phone");
 				aphone.setAttribute("href","tel:" + md.phone_number);
-				aphone.innerHTML = "Appeler par téléphone"
+				aphone.innerHTML = "Appeler par t鬩phone"
 				divcontact.appendChild(aphone);
 			}
 			if (centre.url) {
@@ -539,7 +539,7 @@ Trier selon: <div id="sort">
 			if (centre.appointment_count) {
 				let divcreneaux = doc.createElement("div");
 				divcreneaux.classList.add("creneaux");
-				divcreneaux.innerHTML = centre.appointment_count + " créneaux"
+				divcreneaux.innerHTML = centre.appointment_count + " cr鮥aux"
 				divcontactandcreneaux.appendChild(divcreneaux);
 			}
 		}		
