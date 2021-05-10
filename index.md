@@ -90,6 +90,7 @@ body {
 }
 #vtypes label {
 	break-inside: avoid;
+	white-space: nowrap;
 }
 
 </style>
