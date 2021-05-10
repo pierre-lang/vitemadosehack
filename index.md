@@ -28,7 +28,7 @@ body {
     border-radius: 10px;
     font-size: 18pt;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-device-width: 800px) {
   #localisation input  {
     width: 90vw;
 	height: auto;
