@@ -207,9 +207,6 @@ Trier selon: <div id="sort">
 	
 	var placeTypes = {"vaccination-center":"Centre de vaccination",drugstore:"Pharmacie","general-practitioner":"Médecin généraliste"};
 	
-	localisationInput.addEventListener("focus",function() {
-		localisationInput.setSelectionRange(0,localisationInput.value.length);
-	})
 	
 	var vdmAppointmentsByDepartment = {}
 	
@@ -676,7 +673,9 @@ Trier selon: <div id="sort">
 	}
 	
 	function addressclick() {
-		localisationInput.value = this.innerHTML;
+		if (localisationInput.value != this.innerHTML) {
+			localisationInput.value = this.innerHTML;
+		}
 		currentAddress = this.innerHTML;
 		localStorage.setItem("currentAddress",currentAddress);
 		currentCoordinates = this._coordinates;
@@ -732,6 +731,10 @@ Trier selon: <div id="sort">
 	}
 	localisationInput.addEventListener("input",resolveaddress);
 	localisationInput.addEventListener("focusin",resolveaddress);
+	
+	localisationInput.addEventListener("focus",function() {
+		localisationInput.setSelectionRange(0,localisationInput.value.length);
+	})
 	
 	let cura = localStorage.getItem("currentAddress");
 	if (cura!=null) {
