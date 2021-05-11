@@ -8,9 +8,21 @@ var geoJSONDepartements = {"type":"FeatureCollection","features":[{"type":"Featu
 <style>
 header {
 	z-index : -1;
+	float: none;
+	position: static;
+	width: auto;
 }
+section {
+	float: none;
+	position: static;
+	width: auto;
+}
+
 footer {
 	z-index: -1;
+	float: none;
+	position: static;
+	width: auto;
 }
 
 #localisation .results {
