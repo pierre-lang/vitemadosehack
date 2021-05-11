@@ -98,7 +98,7 @@ body {
 
 #hackwrapper {
 	padding-left: 5px;
-	background-color: white;
+	background-color: #f9f9f9;
 }
 @media screen and (max-device-width: 800px) {
   #localisation input  {
