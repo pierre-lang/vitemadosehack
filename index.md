@@ -204,6 +204,7 @@ Trier selon: <div id="sort">
 	var currentCoordinates = null;
 	var nearestDepartmentsCodes = {};
 	var lastDataUpdate = null;
+	var lastDataUpdateTry = null;
 	
 	var placeTypes = {"vaccination-center":"Centre de vaccination",drugstore:"Pharmacie","general-practitioner":"Médecin généraliste"};
 	
@@ -306,6 +307,15 @@ Trier selon: <div id="sort">
 		if (lastDataUpdate) {
 			nbresultsDiv.innerHTML += " (Données du " + lastDataUpdate.toLocaleString() + ")" 
 		}
+		
+		let dnow = new Date();
+		let dminus5mn = new Date(dnow.getTime() - 8*60*1000);
+		let dminus30s = new Date(dnow.getTime() - 30*1000);
+		if (dminus5mn<lastDataUpdate) {
+			if (lastDataUpdateTry==null||lastDataUpdateTry<dminus30s) {
+				grabData();
+			}
+		}
 	}
 	
 	divVT.addEventListener("change",inPlaceFilter)
@@ -354,6 +364,16 @@ Trier selon: <div id="sort">
 	function grabData() {
 		(function() { 
 			let count = Object.keys(nearestDepartmentsCodes).length;
+			
+			let dnow = new Date();
+			let dminus5mn = new Date(dnow.getTime() - 8*60*1000);
+			let dminus30s = new Date(dnow.getTime() - 30*1000);
+			if (dminus5mn<lastDataUpdate) {
+				if (lastDataUpdateTry==null||lastDataUpdateTry<dminus30s) {
+					vdmAppointmentsByDepartment = {};
+				}
+				lastDataUpdateTry = dnow;
+			}
 			for (let code in nearestDepartmentsCodes) {
 				(function() {
 					let lcode = code;
