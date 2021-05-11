@@ -207,7 +207,9 @@ Trier selon: <div id="sort">
 	
 	var placeTypes = {"vaccination-center":"Centre de vaccination",drugstore:"Pharmacie","general-practitioner":"Médecin généraliste"};
 	
-
+	localisationInput.addEventListener("focus",function() {
+		localisationInput.setSelectionRange(0,localisationInput.value.length);
+	})
 	
 	var vdmAppointmentsByDepartment = {}
 	
