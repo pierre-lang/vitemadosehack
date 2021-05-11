@@ -33,30 +33,15 @@ body {
 	white-space: nowrap;
 }
 
-@media screen and (max-device-width: 800px) {
-  #localisation input  {
-    width: 90vw;
-	height: auto;
-	font-size: inherit;
-  }
-  #hackwrapper {
-	width: 95vw;
-  }
-  
-  #vtypes label {
-	white-space: nowrap;
-	font-size: 12px;
-	display:block;
-  }
-}
-
-
 #map {
 	width: 500px;
 	max-width: 95vw;
 	height: 500px;
 	max-height: 50vh;
 }
+
+
+
 
 #localisation .results {
     border-radius: 10px;
@@ -113,6 +98,28 @@ body {
 
 #hackwrapper {
 	padding-left: 5px;
+}
+@media screen and (max-device-width: 800px) {
+  #localisation input  {
+    width: 90vw;
+	height: auto;
+	font-size: inherit;
+  }
+  #hackwrapper {
+	width: 95vw;
+  }
+  
+  #vtypes label {
+	white-space: nowrap;
+	font-size: 12px;
+	display:block;
+  }
+  .centre {
+	width: 95%;
+  }
+  #map {
+	width: 90vw;
+  }
 }
 
 </style>
