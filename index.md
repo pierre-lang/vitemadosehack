@@ -309,9 +309,9 @@ Trier selon: <div id="sort">
 		}
 		
 		let dnow = new Date();
-		let dminus5mn = new Date(dnow.getTime() - 8*60*1000);
+		let dminus5mn = new Date(dnow.getTime() - 5*60*1000);
 		let dminus30s = new Date(dnow.getTime() - 30*1000);
-		if (dminus5mn<lastDataUpdate) {
+		if (dminus5mn>lastDataUpdate) {
 			if (lastDataUpdateTry==null||lastDataUpdateTry<dminus30s) {
 				grabData();
 			}
@@ -366,9 +366,9 @@ Trier selon: <div id="sort">
 			let count = Object.keys(nearestDepartmentsCodes).length;
 			
 			let dnow = new Date();
-			let dminus5mn = new Date(dnow.getTime() - 8*60*1000);
+			let dminus5mn = new Date(dnow.getTime() - 5*60*1000);
 			let dminus30s = new Date(dnow.getTime() - 30*1000);
-			if (dminus5mn<lastDataUpdate) {
+			if (dminus5mn>lastDataUpdate) {
 				if (lastDataUpdateTry==null||lastDataUpdateTry<dminus30s) {
 					vdmAppointmentsByDepartment = {};
 				}
