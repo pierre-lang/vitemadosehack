@@ -371,6 +371,7 @@ Trier selon: <div id="sort">
 			if (dminus5mn>lastDataUpdate) {
 				if (lastDataUpdateTry==null||lastDataUpdateTry<dminus30s) {
 					vdmAppointmentsByDepartment = {};
+					lastDataUpdate = null;
 				}
 				lastDataUpdateTry = dnow;
 			}
