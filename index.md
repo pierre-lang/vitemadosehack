@@ -408,10 +408,14 @@ Trier selon: <div id="sort">
 	
 	
 	function filter(obj,loc,rayon) {
-		let objloc = turf.point([obj.location.longitude,obj.location.latitude])
-		let d = turf.distance(loc,objloc);
-		obj.distance = d;
-		return d < rayon;
+		if (obj.location&&obj.location.longitude!=undefined&&obj.location.latitude!=undefined) {
+			let objloc = turf.point([obj.location.longitude,obj.location.latitude])
+			let d = turf.distance(loc,objloc);
+			obj.distance = d;
+			return d < rayon;
+		} else {
+			return false;
+		}
 	}
 	var days = {
 			"0" : "Dimanche",
